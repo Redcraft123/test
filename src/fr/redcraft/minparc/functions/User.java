@@ -7,6 +7,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.bukkit.BanList;
 import org.bukkit.Bukkit;
@@ -37,6 +38,7 @@ public class User extends UserData {
 
 	public static HashMap<String, User> userhash = new HashMap<String, User>();
 	public static BanList bannedPlayers = Bukkit.getServer().getBanList(BanList.Type.NAME);
+	public static Map<String, Location> tpback = new HashMap<String, Location>(10);
 
 	private String user;
 	private boolean vanish;
@@ -474,10 +476,13 @@ public class User extends UserData {
 
 	public void saveLastLocation() {
 		this.loc = this.getPlayer().getLocation();
+		tpback.put(getName(), loc);
 	}
 
 	public Location getLastLocation() {
-		return this.loc;
+		
+		Location back = tpback.get(getName());
+		return back;
 	}
 
 	public boolean hasTpaRequest() {

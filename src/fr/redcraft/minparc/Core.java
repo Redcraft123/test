@@ -10,21 +10,14 @@ import fr.redcraft.minparc.Listeners.BlockListener;
 import fr.redcraft.minparc.Listeners.EntityListener;
 import fr.redcraft.minparc.Listeners.PlayerListener;
 import fr.redcraft.minparc.data.Config;
-import fr.redcraft.minparc.data.ConfigUtils;
 import fr.redcraft.minparc.data.ConfigurationsManager;
-import fr.redcraft.minparc.data.Database;
 import fr.redcraft.minparc.data.SpawnData;
 import fr.redcraft.minparc.data.WarpData;
 import fr.redcraft.minparc.utils.AutoMessages;
 import fr.redcraft.minparc.utils.Warp;
 
-
-
-
-
 public class Core extends JavaPlugin {
 	public static JavaPlugin plugin;
-	public static Database sql;
 	public static int version = getIntVersion()[0];
 	public static int release = getIntVersion()[1];
 	public static CommandRegister executor;
@@ -37,8 +30,7 @@ public class Core extends JavaPlugin {
 		plugin = this;
 		loadEvent();
 		genereteFolders();
-		ConfigUtils.getInstance().setup(this);
-		 ConfigurationsManager.setupAllConfig();
+		ConfigurationsManager.setupAllConfig();
 		    ConfigurationsManager.saveAllConfig();
 		CommandRegister cmdload = new CommandRegister();
 		cmdload.loadCommands();

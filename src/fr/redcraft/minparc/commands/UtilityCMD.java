@@ -17,10 +17,11 @@ import net.md_5.bungee.api.ChatColor;
 public class UtilityCMD implements CommandExecutor {
 
 	public static String[] getCommands() {
-		String[] array = { "speed", "fly", "top","craft","nick","ci"};
+		String[] array = { "speed", "fly", "top","craft","nick","ci","back"};
 		return array;
 	}
 
+	@SuppressWarnings("static-access")
 	public boolean onCommand(CommandSender sender, Command cmd, String CommandLabel, String[] args) {
 
 		if (sender instanceof Player || sender instanceof ConsoleCommandSender) {
@@ -47,7 +48,7 @@ public class UtilityCMD implements CommandExecutor {
 			}
 		}
 		if (cmd.getName().equalsIgnoreCase("speed")) {
-			if (!sender.hasPermission("MinParc.Fly")) {
+			if (!sender.hasPermission("MinParc.Speed")) {
 				sender.sendMessage("§cVous n'avez pas la permission d'utiliser cette command");
 
 				return false;
@@ -71,7 +72,7 @@ public class UtilityCMD implements CommandExecutor {
 		}
 
 		if (cmd.getName().equalsIgnoreCase("craft")) {
-			if (!sender.hasPermission("MinParc.Fly")) {
+			if (!sender.hasPermission("MinParc.Craft")) {
 				sender.sendMessage("§cVous n'avez pas la permission d'utiliser cette command");
 
 				return false;
@@ -83,8 +84,22 @@ public class UtilityCMD implements CommandExecutor {
 		
 		}
 		
+
+		if (cmd.getName().equalsIgnoreCase("back")) {
+			if (!sender.hasPermission("MinParc.Back")) {
+				sender.sendMessage("§cVous n'avez pas la permission d'utiliser cette command");
+				return false;
+			}							
+			if (!(sender instanceof Player))
+				return true;
+			Player player = (Player) sender;
+			User user = new User(player.getName());
+			player.teleport(user.tpback.get(player.getName()));
+			sender.sendMessage("§6Téléportation...");
+		}
+		
 		if (cmd.getName().equalsIgnoreCase("ci")) {
-			if (!sender.hasPermission("MinParc.Fly")) {
+			if (!sender.hasPermission("MinParc.Ci")) {
 				sender.sendMessage("§cVous n'avez pas la permission d'utiliser cette command");
 				return false;
 			}							
@@ -98,7 +113,7 @@ public class UtilityCMD implements CommandExecutor {
 
 
 	if (cmd.getName().equalsIgnoreCase("top")) {
-		if (!sender.hasPermission("MinParc.Fly")) {
+		if (!sender.hasPermission("MinParc.Top")) {
 			sender.sendMessage("§cVous n'avez pas la permission d'utiliser cette command");
 
 			return false;
