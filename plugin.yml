@@ -1,0 +1,11 @@
+name: MinparcCore
+main: fr.redcraft.minparc.Core
+version: 0.0.1
+api-version: 1.13
+author: Redcraft
+commands:
+   discord:
+ 
+   
+
+   
