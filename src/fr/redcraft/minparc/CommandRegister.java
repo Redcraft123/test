@@ -192,73 +192,11 @@ public class CommandRegister {
 	private List<String> getAliases(String cmd) {
 		List<String> list = new ArrayList<String>();
 		switch (cmd) {
-		case "gmc":
-			list.add("c");
-			list.add("creative");
-			break;
-		case "gms":
-			list.add("s");
-			list.add("survival");
-			break;
-		case "gma":
-			list.add("a");
-			list.add("adventure");
-			break;
-		case "gmsp":
-			list.add("sp");
-			list.add("spectateur");
-			break;
-		case "gamemode":
-			list.add("gm");
-			break;
-	
+		
 		case "vanish":
 			list.add("v");
 			break;
-		case "item":
-			list.add("i");
-			break;
-		case "enchant":
-			list.add("enchantment");
-			break;
-		case "xp":
-			list.add("exp");
-			break;
-		case "feed":
-			list.add("eat");
-			break;
-		case "god":
-			list.add("godmode");
-			list.add("tgm");
-			break;
-		case "hat":
-			list.add("head");
-			break;
-		case "walkspeed":
-			list.add("ws");
-			list.add("wspeed");
-			break;
-		case "flyspeed":
-			list.add("fs");
-			list.add("fspeed");
-			break;
-		case "repair":
-			list.add("fix");
-			break;
-		case "workbench":
-			list.add("craft");
-			list.add("wb");
-			list.add("wbench");
-			break;
-		case "me":
-			list.add("description");
-		break;
-		case "invsee":
-			list.add("inventorysee");
-			list.add("invs");
-			list.add("inventorys");
-			list.add("isee");
-			break;
+	
 		case "enderchest":
 			list.add("endersee");
 			list.add("enderchestsee");
@@ -270,32 +208,6 @@ public class CommandRegister {
 			list.add("bc");
 			list.add("broadc");
 			list.add("bcast");
-			break;
-		case "getpos":
-			list.add("pos");
-			list.add("getp");
-			break;
-		case "thor":
-			list.add("strike");
-			list.add("linghting");
-			break;
-		case "helpstaff":
-			list.add("hstaff");
-			list.add("msgstaff");
-			list.add("helps");
-			list.add("msghelp");
-			list.add("staffmessage");
-			list.add("report");
-			break;
-		case "tell":
-			list.add("m");
-			list.add("msg");
-			list.add("pm");
-			list.add("whisper");
-			list.add("w");
-			list.add("playermessage");
-			list.add("pmessage");
-			list.add("pmsg");
 			break;
 		case "reply":
 			list.add("r");
@@ -332,47 +244,7 @@ public class CommandRegister {
 		case "tempban":
 			list.add("tban");
 			break;
-		case "createjail":
-			list.add("cjail");
-			list.add("cj");
-			list.add("createj");
-			break;
-		case "deljail":
-			list.add("djail");
-			list.add("dj");
-			list.add("deletej");
-			list.add("deletejail");
-			break;
-		case "lookup":
-			list.add("look");
-			list.add("checkban");
-			list.add("checkmute");
-			list.add("check");
-			break;
-		case "banip":
-			list.add("ban-ip");
-			list.add("ipban");
-			break;
-		case "unbanip":
-			list.add("unban-ip");
-			list.add("unipban");
-			list.add("ipunban");
-			break;
-		case "seen":
-			list.add("ip");
-			list.add("iplookup");
-			break;
-		case "setlockaccount":
-			list.add("setkeyword");
-			break;
-		case "unlockaccount":
-			list.add("keyword");
-			break;
-		case "history":
-			list.add("bandata");
-			list.add("punish");
-			list.add("punishdata");
-			break;
+	
 		case "balance":
 			list.add("money");
 			list.add("bal");
@@ -383,11 +255,6 @@ public class CommandRegister {
 		case "firstlogin":
 			list.add("first");
 			list.add("flogin");
-			break;
-		case "lastlocation":
-			list.add("last");
-			list.add("lastloc");
-			break;
 		case "kitcreator":
 			list.add("kitc");
 			list.add("kitcrea");
@@ -398,11 +265,7 @@ public class CommandRegister {
 		case "nightvision":
 			list.add("nv");
 			list.add("nvision");
-			break;
-		case "fireball":
-			list.add("fire");
-			list.add("fball");
-			break;
+		
 		default:
 			return list;
 		}

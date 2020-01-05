@@ -17,7 +17,7 @@ import net.md_5.bungee.api.ChatColor;
 public class UtilityCMD implements CommandExecutor {
 
 	public static String[] getCommands() {
-		String[] array = { "speed", "fly", "top","craft","nick","ci","back"};
+		String[] array = { "speed", "fly", "top","craft","nick","ci","back","ec","invsee"};
 		return array;
 	}
 
@@ -70,6 +70,40 @@ public class UtilityCMD implements CommandExecutor {
 				}
 			
 		}
+		
+		if(cmd.getName().equalsIgnoreCase("invsee")) {
+			Player player = (Player) sender;
+			if(!sender.hasPermission("MinParc.Invsee")) {
+				sender.sendMessage("§cVous n'avez pas la permission d'utiliser cette command");
+				return false;
+			}
+			
+			 if (args.length == 1) {
+		    	  Player target = Bukkit.getPlayerExact(args[0]);
+		    	  
+		    	  player.openInventory(target.getInventory()); 
+		    	  player.sendMessage(Core.prefix + "§6Vous venez d'ouvrir l'inventaire de §e" + target.getName());  
+			 }
+		    
+		}
+		
+		if(cmd.getName().equalsIgnoreCase("ec")) {
+			Player player = (Player) sender;
+			if(!sender.hasPermission("MinParc.Enderchest")) {
+				sender.sendMessage("§cVous n'avez pas la permission d'utiliser cette command");
+				return false;
+			}
+			
+			 if (args.length == 1) {
+		    	  Player target = Bukkit.getPlayerExact(args[0]);
+		    	  
+		    	  player.openInventory(target.getEnderChest()); 
+		    	  player.sendMessage(Core.prefix + "§6Vous venez d'ouvrir l'EnderChest de §e" + target.getName());  
+			 }
+		    
+		}
+			
+		
 
 		if (cmd.getName().equalsIgnoreCase("craft")) {
 			if (!sender.hasPermission("MinParc.Craft")) {
@@ -134,7 +168,7 @@ public class UtilityCMD implements CommandExecutor {
 			{
 				if ((args.length == 0) || (args.length == 1))
 				{
-					//Messages.sendMessage(player, "�c/nick <player> <name>");
+					sender.sendMessage("§c/nick <player> <name>");
 				}
 				else if (args.length == 2)
 				{
