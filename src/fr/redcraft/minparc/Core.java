@@ -11,6 +11,7 @@ import fr.redcraft.minparc.Listeners.EntityListener;
 import fr.redcraft.minparc.Listeners.PlayerListener;
 import fr.redcraft.minparc.data.Config;
 import fr.redcraft.minparc.data.ConfigurationsManager;
+import fr.redcraft.minparc.data.SettingsManager;
 import fr.redcraft.minparc.data.SpawnData;
 import fr.redcraft.minparc.data.WarpData;
 import fr.redcraft.minparc.utils.AutoMessages;
@@ -39,7 +40,7 @@ public class Core extends JavaPlugin {
 		AutoMessages.loadAutoMessages();
 		new AutoMessages();
 		AutoMessages.sendAutoMessages();
-		
+		SettingsManager.getInstance().setup(this);
 
 }
 	public static Warp getWarpManager()
@@ -53,6 +54,8 @@ public class Core extends JavaPlugin {
 	public static JavaPlugin getInstance() {
 		return plugin;
 	}
+	
+	
 
 	public void loadEvent() {
 		PluginManager pm = Bukkit.getPluginManager();

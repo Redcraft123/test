@@ -15,6 +15,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import fr.redcraft.minparc.Core;
+import fr.redcraft.minparc.Attraction.Attraction;
 import fr.redcraft.minparc.utils.AutoMessages;
 
 
@@ -129,9 +130,12 @@ implements CommandExecutor
 				}
 		}
 
-		if (args[0].equalsIgnoreCase("list")) 
+		if (args[0].equalsIgnoreCase("add")) 
 		{				
-
+			if (args.length == 2)
+			{
+				Attraction.addAttraction(args[1], sender);
+			}
 		}
 
 		if (args[0].equalsIgnoreCase("jump")) 

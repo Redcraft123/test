@@ -73,8 +73,8 @@ public class Config {
 	}
 	
 	public void reload() {
-		if(this.config==Bukkit.getPluginManager().getPlugin("MainMC").getConfig()) {
-			Bukkit.getPluginManager().getPlugin("MainMC").reloadConfig();
+		if(this.config==Bukkit.getPluginManager().getPlugin("MinparcCore").getConfig()) {
+			Bukkit.getPluginManager().getPlugin("MinparcCore").reloadConfig();
 		}
 	}
 	
