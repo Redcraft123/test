@@ -12,6 +12,8 @@ import org.bukkit.entity.Player;
 
 import fr.redcraft.minparc.Core;
 import fr.redcraft.minparc.functions.User;
+import fr.redcraft.minparc.utils.NamTagChanger;
+import fr.redcraft.minparc.utils.TeamAction;
 import net.md_5.bungee.api.ChatColor;
 import net.minecraft.server.v1_13_R2.MinecraftServer;
 
@@ -155,7 +157,8 @@ public class UtilityCMD implements CommandExecutor {
 				return false;
 			}
 				if (args.length == 0) {
-				
+					NamTagChanger.changeNameTag((Player) Bukkit.getOnlinePlayers(), player, "aa", "bvb", TeamAction.CREATE);
+					
 					return true;
 				}
 			}

@@ -9,6 +9,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 import fr.redcraft.minparc.Listeners.BlockListener;
 import fr.redcraft.minparc.Listeners.EntityListener;
 import fr.redcraft.minparc.Listeners.PlayerListener;
+import fr.redcraft.minparc.Menu.LandMinParcGUI;
+import fr.redcraft.minparc.Menu.LibertySquareLandGUI;
+import fr.redcraft.minparc.Menu.MinparcMainInventory;
+import fr.redcraft.minparc.Menu.Lands.DiscoverylandGUI;
+import fr.redcraft.minparc.Menu.Lands.FrontierlandGUI;
+import fr.redcraft.minparc.Menu.Lands.MainstreetGUI;
+import fr.redcraft.minparc.Menu.Lands.RubixWorldGUI;
 import fr.redcraft.minparc.data.Config;
 import fr.redcraft.minparc.data.ConfigurationsManager;
 import fr.redcraft.minparc.data.SettingsManager;
@@ -62,6 +69,13 @@ public class Core extends JavaPlugin {
 		pm.registerEvents(new BlockListener(), this);
 		pm.registerEvents(new PlayerListener(), this);
 		pm.registerEvents(new EntityListener(), this);
+		pm.registerEvents(new MinparcMainInventory(), this);
+		pm.registerEvents(new LandMinParcGUI(), this);
+		pm.registerEvents(new LibertySquareLandGUI(), this);
+		pm.registerEvents(new FrontierlandGUI(), this);
+		pm.registerEvents(new MainstreetGUI(), this);
+		pm.registerEvents(new DiscoverylandGUI(), this);
+		pm.registerEvents(new RubixWorldGUI(), this);
 	}
 	
 	public static int[] getIntVersion() {
@@ -81,5 +95,7 @@ public class Core extends JavaPlugin {
 		Config.folders();
 
 	}
+	
+
 
 }
