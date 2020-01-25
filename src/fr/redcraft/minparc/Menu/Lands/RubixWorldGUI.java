@@ -99,7 +99,7 @@ public class RubixWorldGUI implements Listener {
 
 		inv.setItem(13, new ItemBuilder("§eMinParc Railroad - Rubik's Station", Material.PAPER, 1)
 				.addLore(" ")
-				.addLore("§eStatus : " + AttractionManagers.getAttraStatusByName("MinParcRailroad-Rubik'sStation"))
+				.addLore("§eStatus : " + AttractionManagers.getAttraStatusByName("MinParcRailroadRubikStation"))
 				.addLore(" ")
 				.addLore("§eAttente : ")
 				.addLore(" ")

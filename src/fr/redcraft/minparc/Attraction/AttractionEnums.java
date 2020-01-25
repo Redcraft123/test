@@ -11,37 +11,38 @@ public enum AttractionEnums {
 	WildWest("WildWest",LandsEnums.Frontierland),
 	GeyserExpedition("GeyserExpedition",LandsEnums.Frontierland),
 	FrontierlandTour("FrontierlandTour",LandsEnums.Frontierland),
-	MinParcRailroadFrontierlandStation("MinParcRailroad-FrontierlandStation",LandsEnums.Frontierland),
+	MinParcRailroadFrontierlandStation("MinParcRailroadFrontierlandStation",LandsEnums.Frontierland),
 
 	//rubix
 
 	CubeAdventure("CubeAdventure",LandsEnums.Rubixworld),
 	Pyraminx("Pyraminx",LandsEnums.Rubixworld),
 	RubixFalls("RubixFalls",LandsEnums.Rubixworld),
-	planetExplo("PlanetExploration",LandsEnums.Rubixworld),
+	PlanetExploration("PlanetExploration",LandsEnums.Rubixworld),
 	MinParcRailroadRubiksStation("MinParcRailroadRubikStation",LandsEnums.Rubixworld),
 
 	//Disco
 
 	Orbitron("Orbitron",LandsEnums.Discoveryland),
-	DiscoverylandRailRoad("MinParcRailroad-Discoveryland Station",LandsEnums.Discoveryland),
+	DiscoverylandRailRoad("MinParcRailroadDiscoveryland Station",LandsEnums.Discoveryland),
 
 
 	//Ms
 
 	DisneylandTransportation("DisneylandTransportation",LandsEnums.Mainstreet),
 	Aquarium("Aquarium",LandsEnums.Mainstreet),
-	GrandRoue("GrandeRoue",LandsEnums.Mainstreet),
-	RailRoadMainStreet("MinParcRailroad-MainStreet",LandsEnums.Mainstreet),
+	GrandRoue("GrandRoue",LandsEnums.Mainstreet),
+	MinParcRailroadMainStreet("MinParcRailroadMainStreet",LandsEnums.Mainstreet),
 
 	//fantasyland
 	Symbolica("Symbolica",LandsEnums.Fantasyland),
-	Blancheneige("Blanche-neiges",LandsEnums.Fantasyland),
+	Blancheneige("Blancheneiges",LandsEnums.Fantasyland),
 	
 	
 	//liberty
 	Storyofliberty("StoryOfLiberty",LandsEnums.Libertysquare),
-	hth("TheHollywoodTowerHotel",LandsEnums.Hollywood);
+	TheHollywoodTowerHotel("TheHollywoodTowerHotel",LandsEnums.Hollywood),
+	DisneyLandTransportatonLiberty("DisneyLandTransportatonLiberty",LandsEnums.Mainstreet);
 
 	public final String nom;
 

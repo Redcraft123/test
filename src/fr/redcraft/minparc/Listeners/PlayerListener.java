@@ -3,6 +3,7 @@ package fr.redcraft.minparc.Listeners;
 import java.io.IOException;
 
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -15,6 +16,7 @@ import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
+import org.bukkit.event.player.PlayerGameModeChangeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
@@ -93,6 +95,9 @@ public class PlayerListener implements Listener {
 		event.setQuitMessage("§8[§c-§8] " + user.getName() + " §5a quitté MinParc §9Resort");
 	}
 
+	
+	
+	
 	@EventHandler
 	public void onChat(AsyncPlayerChatEvent event) {
 		Player player = event.getPlayer();

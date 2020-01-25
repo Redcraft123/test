@@ -12,6 +12,7 @@ import org.bukkit.inventory.ItemStack;
 import fr.redcraft.api.Items.ItemBuilder;
 import fr.redcraft.minparc.Menu.Lands.DiscoverylandGUI;
 import fr.redcraft.minparc.Menu.Lands.FrontierlandGUI;
+import fr.redcraft.minparc.Menu.Lands.LibertySquareLandGUI;
 import fr.redcraft.minparc.Menu.Lands.MainstreetGUI;
 import fr.redcraft.minparc.Menu.Lands.RubixWorldGUI;
 
@@ -131,6 +132,12 @@ public class LandMinParcGUI implements Listener {
 			{
 				player.sendMessage("§eAucune attraction n'est présente dans ce land");
 			}
+			
+			else if ((current.getType() == Material.GOLD_BLOCK) && (current.getItemMeta().getDisplayName().equals("MP Castle")))
+			{
+				player.sendMessage("§eAucune attraction n'est présente dans ce land");
+			}
+
 
 
 			else if ((current.getType() == Material.CACTUS) && (current.getItemMeta().getDisplayName().equals("Frontierland")))

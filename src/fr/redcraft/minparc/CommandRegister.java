@@ -14,7 +14,8 @@ import org.bukkit.command.PluginCommand;
 import org.bukkit.command.SimpleCommandMap;
 import org.bukkit.plugin.Plugin;
 
-import fr.redcraft.minparc.commands.AutoMessageCMD;
+import fr.redcraft.minparc.commands.MinparcCMD;
+import fr.redcraft.minparc.commands.AttractionCMD;
 import fr.redcraft.minparc.commands.GamemodeCMD;
 import fr.redcraft.minparc.commands.SpawnCMD;
 import fr.redcraft.minparc.commands.TimeCMD;
@@ -67,7 +68,11 @@ public class CommandRegister {
 			cmdlist.addAll(getAliases(cmd));
 		}
 
-		for (String cmd : AutoMessageCMD.getCommands()) {
+		for (String cmd : MinparcCMD.getCommands()) {
+			cmdlist.add(cmd);
+			cmdlist.addAll(getAliases(cmd));
+		}
+		for (String cmd : AttractionCMD.getCommands()) {
 			cmdlist.add(cmd);
 			cmdlist.addAll(getAliases(cmd));
 		}
@@ -99,7 +104,11 @@ public class CommandRegister {
 		for (String cmd : UtilityCMD.getCommands()) {
 			cmdlist.add(cmd);
 		}
-		for (String cmd : AutoMessageCMD.getCommands()) {
+		for (String cmd : MinparcCMD.getCommands()) {
+			cmdlist.add(cmd);
+		}
+		
+		for (String cmd : AttractionCMD.getCommands()) {
 			cmdlist.add(cmd);
 		}
 		for (String cmd : cmdlist) {
@@ -150,8 +159,13 @@ public class CommandRegister {
 				cmd.setExecutor(new UtilityCMD());
 				continue;
 			}
-			if (isCommandOf(AutoMessageCMD.getCommands(), cmd)) {
-				cmd.setExecutor(new AutoMessageCMD());
+			if (isCommandOf(MinparcCMD.getCommands(), cmd)) {
+				cmd.setExecutor(new MinparcCMD());
+				continue;
+			}
+			
+			if (isCommandOf(AttractionCMD.getCommands(), cmd)) {
+				cmd.setExecutor(new AttractionCMD());
 				continue;
 			}
 			

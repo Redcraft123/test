@@ -10,12 +10,13 @@ import fr.redcraft.minparc.Listeners.BlockListener;
 import fr.redcraft.minparc.Listeners.EntityListener;
 import fr.redcraft.minparc.Listeners.PlayerListener;
 import fr.redcraft.minparc.Menu.LandMinParcGUI;
-import fr.redcraft.minparc.Menu.LibertySquareLandGUI;
 import fr.redcraft.minparc.Menu.MinparcMainInventory;
 import fr.redcraft.minparc.Menu.Lands.DiscoverylandGUI;
 import fr.redcraft.minparc.Menu.Lands.FrontierlandGUI;
+import fr.redcraft.minparc.Menu.Lands.LibertySquareLandGUI;
 import fr.redcraft.minparc.Menu.Lands.MainstreetGUI;
 import fr.redcraft.minparc.Menu.Lands.RubixWorldGUI;
+import fr.redcraft.minparc.commands.TabulationExecutor;
 import fr.redcraft.minparc.data.Config;
 import fr.redcraft.minparc.data.ConfigurationsManager;
 import fr.redcraft.minparc.data.SettingsManager;
@@ -56,6 +57,7 @@ public class Core extends JavaPlugin {
 	  }
 	@Override
 	public void onDisable() {
+		SettingsManager.getInstance().saveData();
 	}
 
 	public static JavaPlugin getInstance() {

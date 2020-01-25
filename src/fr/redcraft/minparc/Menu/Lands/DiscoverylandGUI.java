@@ -57,7 +57,7 @@ public class DiscoverylandGUI implements Listener {
 		
 		inv.setItem(10, new ItemBuilder("§eMinParc Railroad - Discoveryland Station", Material.PAPER, 1)
 				.addLore(" ")
-				.addLore("§eStatus : " + AttractionManagers.getAttraStatusByName("MinParcRailroad-Discoveryland Station"))
+				.addLore("§eStatus : " + AttractionManagers.getAttraStatusByName("MinParcRailroadDiscoveryland Station"))
 				.addLore(" ")
 				.addLore("§eAttente : ")
 				.addLore(" ")

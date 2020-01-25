@@ -152,7 +152,7 @@ public class FrontierlandGUI implements Listener {
 
 		inv.setItem(17, new ItemBuilder("§eMinParc Railroad - Frontierland Station", Material.PAPER, 1)
 				.addLore(" ")
-				.addLore("§eStatus : " + AttractionManagers.getAttraStatusByName("MinParcRailroad-FrontierlandStation"))
+				.addLore("§eStatus : " + AttractionManagers.getAttraStatusByName("MinParcRailroadFrontierlandStation"))
 				.addLore(" ")
 				.addLore("§eAttente : ")
 				.addLore(" ")
