@@ -25,6 +25,7 @@ import org.bukkit.potion.PotionEffectType;
 import fr.redcraft.minparc.Core;
 import fr.redcraft.minparc.data.SpawnData;
 import fr.redcraft.minparc.data.UserData;
+import fr.redcraft.minparc.shop.ShopEnums;
 import fr.redcraft.minparc.utils.Date;
 import fr.redcraft.minparc.utils.LocationUtils;
 
@@ -294,6 +295,7 @@ public class User extends UserData {
 							+ LocalDate.now().getYear() + " " + LocalTime.now().getHour() + ":"
 							+ LocalTime.now().getMinute());
 			super.get().set("userdata.others-ips", new ArrayList<String>());
+			super.get().set("userdata.inventory", 0);
 			super.save();
 		}
 	}
@@ -528,6 +530,19 @@ public class User extends UserData {
 		LocationUtils loc = new LocationUtils(this.getPlayer().getLocation());
 		super.get().set("userdata.lastlocation", loc.toString() + " " + loc.getWorld());
 		super.save();
+	}
+
+	public void giveItemInv(Player p, ShopEnums shop) {
+		if(!hasItemInv(p, shop)) {
+			super.get().set(p.getName() + "inventory." + shop.getName(), true);
+		}		
+	}
+	
+	public boolean hasItemInv(Player p, ShopEnums shop) {
+		if (super.get().get(p.getName() + "inventory." + shop.getName()) != null )
+			return true;
+		else
+			return false;
 	}
 
 

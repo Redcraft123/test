@@ -16,6 +16,7 @@ import org.bukkit.plugin.Plugin;
 
 import fr.redcraft.minparc.commands.MinparcCMD;
 import fr.redcraft.minparc.commands.AttractionCMD;
+import fr.redcraft.minparc.commands.CoinsCMD;
 import fr.redcraft.minparc.commands.GamemodeCMD;
 import fr.redcraft.minparc.commands.SpawnCMD;
 import fr.redcraft.minparc.commands.TimeCMD;
@@ -76,6 +77,10 @@ public class CommandRegister {
 			cmdlist.add(cmd);
 			cmdlist.addAll(getAliases(cmd));
 		}
+		for (String cmd : CoinsCMD.getCommands()) {
+			cmdlist.add(cmd);
+			cmdlist.addAll(getAliases(cmd));
+		}
 		
 		return cmdlist;
 	}
@@ -109,6 +114,10 @@ public class CommandRegister {
 		}
 		
 		for (String cmd : AttractionCMD.getCommands()) {
+			cmdlist.add(cmd);
+		}
+		
+		for (String cmd : CoinsCMD.getCommands()) {
 			cmdlist.add(cmd);
 		}
 		for (String cmd : cmdlist) {
@@ -166,6 +175,11 @@ public class CommandRegister {
 			
 			if (isCommandOf(AttractionCMD.getCommands(), cmd)) {
 				cmd.setExecutor(new AttractionCMD());
+				continue;
+			}
+			
+			if (isCommandOf(CoinsCMD.getCommands(), cmd)) {
+				cmd.setExecutor(new CoinsCMD());
 				continue;
 			}
 			

@@ -9,9 +9,12 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 
 import fr.redcraft.minparc.Core;
 import fr.redcraft.minparc.functions.User;
+import fr.redcraft.minparc.shop.PlayerConfig;
+import fr.redcraft.minparc.shop.ShopEnums;
 import fr.redcraft.minparc.utils.NamTagChanger;
 import fr.redcraft.minparc.utils.TeamAction;
 import net.md_5.bungee.api.ChatColor;
@@ -157,8 +160,13 @@ public class UtilityCMD implements CommandExecutor {
 				return false;
 			}
 				if (args.length == 0) {
-					NamTagChanger.changeNameTag((Player) Bukkit.getOnlinePlayers(), player, "aa", "bvb", TeamAction.CREATE);
 					
+					Inventory inv = Bukkit.createInventory(player, 36, "SHop test");
+					for(ShopEnums shop : ShopEnums.values()) {
+						
+					
+					
+					}
 					return true;
 				}
 			}

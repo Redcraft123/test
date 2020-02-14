@@ -2,7 +2,10 @@ package fr.redcraft.minparc;
 
 
 
+import java.io.IOException;
+
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -22,6 +25,8 @@ import fr.redcraft.minparc.data.ConfigurationsManager;
 import fr.redcraft.minparc.data.SettingsManager;
 import fr.redcraft.minparc.data.SpawnData;
 import fr.redcraft.minparc.data.WarpData;
+import fr.redcraft.minparc.shop.PlayerConfig;
+import fr.redcraft.minparc.shop.ShopListener;
 import fr.redcraft.minparc.utils.AutoMessages;
 import fr.redcraft.minparc.utils.Warp;
 
@@ -49,7 +54,9 @@ public class Core extends JavaPlugin {
 		new AutoMessages();
 		AutoMessages.sendAutoMessages();
 		SettingsManager.getInstance().setup(this);
+	
 
+		
 }
 	public static Warp getWarpManager()
 	  {
@@ -58,6 +65,11 @@ public class Core extends JavaPlugin {
 	@Override
 	public void onDisable() {
 		SettingsManager.getInstance().saveData();
+		try {
+			PlayerConfig.save();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public static JavaPlugin getInstance() {

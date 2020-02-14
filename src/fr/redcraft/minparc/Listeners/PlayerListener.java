@@ -3,7 +3,6 @@ package fr.redcraft.minparc.Listeners;
 import java.io.IOException;
 
 import org.bukkit.Bukkit;
-import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -16,18 +15,19 @@ import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
-import org.bukkit.event.player.PlayerGameModeChangeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerSwapHandItemsEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
+import org.bukkit.event.server.ServerListPingEvent;
 import org.bukkit.inventory.ItemStack;
 
 import fr.redcraft.api.Items.ItemBuilder;
 import fr.redcraft.minparc.Core;
 import fr.redcraft.minparc.Menu.MinparcMainInventory;
+import fr.redcraft.minparc.data.SettingsManager;
 import fr.redcraft.minparc.functions.User;
 import fr.redcraft.minparc.utils.AFK;
 import net.md_5.bungee.api.ChatColor;
@@ -97,6 +97,10 @@ public class PlayerListener implements Listener {
 
 	
 	
+	@EventHandler
+	public void onPing(ServerListPingEvent event) {
+		event.setMotd(SettingsManager.getInstance().getData().get("motd.").toString());
+	}
 	
 	@EventHandler
 	public void onChat(AsyncPlayerChatEvent event) {

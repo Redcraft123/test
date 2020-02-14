@@ -16,9 +16,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import fr.redcraft.minparc.Core;
-import fr.redcraft.minparc.Attraction.Attraction;
 import fr.redcraft.minparc.Attraction.AttractionEnums;
-import fr.redcraft.minparc.data.Config;
 import fr.redcraft.minparc.data.SettingsManager;
 import fr.redcraft.minparc.utils.AutoMessages;
 

@@ -75,7 +75,7 @@ public class AFK {
 				@Override
 				public void run() {
 					if (p != null && isAfk()) {
-						if (p.hasPermission("main.afk.bypasskick"))
+						if (p.hasPermission("mp.apk"))
 							return;
 						afk.remove(p.getName());
 					}

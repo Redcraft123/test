@@ -99,7 +99,7 @@ public class MinparcMainInventory implements Listener {
 
 			else if ((current.getType() == Material.FIREWORK_ROCKET) && (current.getItemMeta().getDisplayName().equals("§aShow/spectacle")))
 			{
-
+				ShowGUI.InvShow(player);
 			}
 
 			else if ((current.getType() == Material.MINECART) && (current.getItemMeta().getDisplayName().equals("§3MinParc Disneyland")))
